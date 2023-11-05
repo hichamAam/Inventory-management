@@ -1,41 +1,66 @@
 package com.example.demo.api.model;
 
+import jakarta.persistence.Table;
+
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.Id;
 
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
+
+    @Column(name = "name")
+    private String name;
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
 
-    public Long getId(){
-        return this.id;
+    // public User(Long Id, String name, String email, String password){
+    //     this.Id = Id;
+    //     this.name = name;
+    //     this.email = email;
+    //     this.password = password;
+    // }
+
+    public Long GetId(){
+        return this.Id;
     }
 
-    public void setId(Long id){
-        this.id = id;
+    public void SetId(Long Id){
+        this.Id = Id;
+    }
+    
+    public String GetName(){
+        return this.name;
     }
 
-    public String getPassword(){
-        return this.password;
+    public void SetName(String name){
+        this.name = name;
     }
 
-    public void setPassword(String password){
-        this.password = password;
-    }
-
-    public String getEmail(){
+    public String GetEmail(){
         return this.email;
     }
 
-    public void setEmail(String email){
+    public void SetEmail(String email){
         this.email = email;
+    }
+
+    public String GetPassword(){
+        return this.password;
+    }
+
+    public void SetPassword(String password){
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        this.password = passwordEncoder.encode(password);
     }
 }
