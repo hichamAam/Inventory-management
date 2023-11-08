@@ -23,13 +23,13 @@ public class Product {
     @Column(name = "stock_qte")
     private Integer stock_qte ;
 
-    public Product(Long id, String name, String category, double price, Integer stock_qte) {
-        this.id = id;
-        this.name = name;
-        this.category = category;
-        this.price = price;
-        this.stock_qte = stock_qte;
-    }
+    // public Product(Long id, String name, String category, double price, Integer stock_qte) {
+    //     this.id = id;
+    //     this.name = name;
+    //     this.category = category;
+    //     this.price = price;
+    //     this.stock_qte = stock_qte;
+    // }
 
     public Long getId() {
         return id;
