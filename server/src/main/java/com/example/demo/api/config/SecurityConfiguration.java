@@ -2,7 +2,7 @@ package com.example.demo.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+// import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -18,7 +18,7 @@ public class SecurityConfiguration {
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests((authorizeRequests) -> authorizeRequests
-                .requestMatchers("/api/**").permitAll()
+                .requestMatchers("**").permitAll()
                 .anyRequest().authenticated()
             ).csrf(AbstractHttpConfigurer::disable);
 

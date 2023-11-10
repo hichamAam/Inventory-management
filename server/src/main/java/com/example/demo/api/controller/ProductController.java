@@ -3,7 +3,6 @@ package com.example.demo.api.controller;
 import com.example.demo.api.exception.ResourceNotFoundException;
 import com.example.demo.api.model.Client;
 import com.example.demo.api.model.Product;
-import com.example.demo.api.repository.ClientRepository;
 import com.example.demo.api.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

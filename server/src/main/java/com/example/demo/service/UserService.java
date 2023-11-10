@@ -24,12 +24,11 @@ public class UserService {
     }
 
     public boolean authenticate(String email, String password){
-        Optional<User> AuthUser = userRepository.findByEmail(email);
+        User AuthUser = userRepository.findByEmail(email);
 
         if (AuthUser != null) {
-            User user = AuthUser.get();
             // Compare the provided raw password with the hashed password in the database
-            return passwordEncoder.matches(password, user.GetPassword());
+            return passwordEncoder.matches(password, AuthUser.GetPassword());
         }else{
             return false; // User not found or password doesn't match
         }
