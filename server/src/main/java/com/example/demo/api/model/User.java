@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Integer Id;
 
     @Column(name = "name")
     private String name;
@@ -31,11 +31,11 @@ public class User {
     //     this.password = password;
     // }
 
-    public Long GetId(){
+    public Integer GetId(){
         return this.Id;
     }
 
-    public void SetId(Long Id){
+    public void SetId(Integer Id){
         this.Id = Id;
     }
     

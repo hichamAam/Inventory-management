@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.api.model.User;
 import com.example.demo.api.repository.UserRepository;
 import com.example.demo.service.UserService;
 
@@ -28,9 +29,9 @@ public class AuthController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/State")
+    @GetMapping("/admin")
     public String state(){
-        return "Server working !";
+        return "server work!";
     }
 
     @PostMapping("/login")

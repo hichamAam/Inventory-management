@@ -35,9 +35,12 @@ public class ProductController {
     }
     //build update product rest api
     @PutMapping("{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable long id,@RequestBody Product productDetails){
-        Product updateProduct=productRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product not exist with id: " + id));
+    public ResponseEntity<Product> updateProduct(@PathVariable Integer id, @RequestBody Product productDetails) {
+        Long productId = (long) id;
+        Product updateProduct = productRepository.findById(productId)
+                .orElseThrow(() -> new ResourceNotFoundException("Product not exist with id: " + productId));
+        updateProduct.setName(productDetails.getName());
+        updateProduct.setdescription(productDetails.getdescription());
         updateProduct.setPrice(productDetails.getPrice());
         updateProduct.setStock_qte(productDetails.getStock_qte());
 
