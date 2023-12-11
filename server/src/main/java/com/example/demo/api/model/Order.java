@@ -2,7 +2,6 @@ package com.example.demo.api.model;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,7 +15,7 @@ import jakarta.persistence.Table;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Long id;
 
     @Column(name = "client", nullable = true)
     private Integer client;
@@ -25,12 +24,12 @@ public class Order {
     @Column(name = "date", nullable = true)
     private String date;
 
-    public Integer getId() {
-        return this.Id;
+    public Long getId() {
+        return this.id;
     }
 
-    public void setId(Integer id) {
-        this.Id = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Integer getClient() {

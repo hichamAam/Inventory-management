@@ -40,6 +40,9 @@ public class ClientController {
         Client updateClient=clientRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Client not exist with id: " + id));
 
+        updateClient.setFirst_name(clientDetails.getFirst_name());
+        updateClient.setLast_name(clientDetails.getLast_name());
+        updateClient.setAdress(clientDetails.getAdress());
         updateClient.setPhone_number(clientDetails.getPhone_number());
         updateClient.setEmail(clientDetails.getEmail());
 

@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id ;
+    private long id ;
 
     @Column (name = "name")
     private String name;
@@ -23,11 +23,11 @@ public class Product {
     @Column(name = "stock_qte")
     private Integer stock_qte ;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -4,7 +4,6 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +30,11 @@ public class AuthController {
 
     @GetMapping("/admin")
     public String state(){
+        // User user1 = new User();
+        // user1.SetName("admin");
+        // user1.SetEmail("admin@gmail.com");
+        // user1.SetPassword("admin");
+        // userRepository.save(user1);
         return "server work!";
     }
 

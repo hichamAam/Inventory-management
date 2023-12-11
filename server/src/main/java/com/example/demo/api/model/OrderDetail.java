@@ -16,9 +16,9 @@ public class OrderDetail {
     private Integer Id;
 
     @Column(name = "order_id", nullable = true)
-    private Integer order;
+    private long order;
     @Column(name = "product_id", nullable = true)
-    private double product;
+    private Integer product;
     @Column(name = "quantity", nullable = true)
     private Integer quantity;
 
@@ -30,19 +30,19 @@ public class OrderDetail {
         this.Id = Id;
     }
 
-    public Integer getOrder() {
+    public long getOrder() {
         return this.order;
     }
 
-    public void setOrder(Integer order) {
-        this.order = order;
+    public void setOrder(long orderId) {
+        this.order = orderId;
     }
 
-    public double getProduct() {
+    public Integer getProduct() {
         return this.product;
     }
 
-    public void setProduct(double product) {
+    public void setProduct(Integer product) {
         this.product = product;
     }
 

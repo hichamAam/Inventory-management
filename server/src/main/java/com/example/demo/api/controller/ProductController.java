@@ -47,6 +47,7 @@ public class ProductController {
         productRepository.save(updateProduct);
         return ResponseEntity.ok(updateProduct);
     }
+
     //build delete client rest api
     @DeleteMapping("{id}")
     public ResponseEntity<Client> deleteProduct(@PathVariable long id){
